@@ -1,0 +1,162 @@
+[
+    {
+        "Ruoka": "Linssimuhennos ja kvinoa",
+        "Herkkuruoka": "0",
+        "Raaka-aineet": [
+            {
+                "ainesosa": "linssit",
+                "maara": "2",
+                "yksikko": "dl"
+            },
+            {
+                "ainesosa": "tomaattimurska",
+                "maara": "1",
+                "yksikko": "tlk"
+            }
+        ]
+    },
+    {
+        "Ruoka": "kermainen curry-kanakastike",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "bolognese",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "kermaperuna ja pippurikanakastike",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "canneloni",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "tofuwokki",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "kanakeitto",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "kana-kvinoa salaatti",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "h\u00e4rkislasagne",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "Texmex jauhiskastike",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "kasvispy\u00f6ryk\u00e4t + kastikse/salsa",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "linssikeitto",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "parmesaanikana ja risottoriisi",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "it\u00e4mainen nuudelisalaatti",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "mifukiusaus",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "lohikiusaus",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "vegepelti",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "porkkanacouscous-fetasalaatti",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "Jugurttinen kvinoa-kanasalaatti",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "kukkakaali-parsakaali-halloumigratiini",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "kasvisburritot",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "sitruunainen broileri-kasvisriisi",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "kanapata",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "tofupata",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "paneer masala",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "pasta-pestosalaatti",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "h\u00e4rkisgratiini",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "broileririisipannu",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "halloumi-parsakaalipihvit",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "lohikiusaus",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "talvisalaatti",
+        "Herkkuruoka": "0"
+    },
+    {
+        "Ruoka": "tortillat",
+        "Herkkuruoka": "1"
+    },
+    {
+        "Ruoka": "nachovuoka",
+        "Herkkuruoka": "1"
+    },
+    {
+        "Ruoka": "arkihampparit",
+        "Herkkuruoka": "1"
+    },
+    {
+        "Ruoka": "pizza",
+        "Herkkuruoka": "1"
+    },
+    {
+        "Ruoka": "sitruuna-halloumipasta",
+        "Herkkuruoka": "1"
+    },
+    {
+        "Ruoka": "uunifetapasta (tomaatti/ryp\u00e4le)",
+        "Herkkuruoka": "1"
+    }
+]
