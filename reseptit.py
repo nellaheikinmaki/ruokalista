@@ -12,7 +12,6 @@ def lueruuat():
     return ruuatlista
 
 def kysyainekset(ruuat):
-    
     for row in ruuat:
         kysyseuraava = True
         print(row["Ruoka"])
@@ -28,8 +27,7 @@ def kysyainekset(ruuat):
                 kysyseuraava = True
                 continue
             if toiminto == "e":
-                kysyseuraava = False
-                
+                kysyseuraava = False         
     with open("reseptit.json", "w") as reseptit:
         json.dump(ruuat, reseptit, indent=4)
 
@@ -38,7 +36,5 @@ def main():
     ruuat = lueruuat()
     kysyainekset(ruuat)
 
-
 if __name__ == "__main__":
     main()
-
