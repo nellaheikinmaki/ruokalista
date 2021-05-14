@@ -1,7 +1,5 @@
 import csv
 import json
-
-ruokalista = None
     
 def lueRuokalista():
     tiedosto = open("csv/ruokalista.csv", "r")
@@ -24,8 +22,8 @@ def kysyViikko(ruokalista):
     return kysyViikko(ruokalista)
 
 
-def teeOstoslista(ruokalista, reseptit, viikko):
-    print("Vko", viikko)
+def teeOstoslista(ruokalista, reseptit, viikko, ostoslista):
+    ostoslista = ostoslista + "Vko " + viikko + "\n"
     for row in ruokalista:
         kysyseuraava = True
         if row["Vko"] == viikko:
@@ -44,30 +42,54 @@ def teeOstoslista(ruokalista, reseptit, viikko):
                     ruokienmaara[ruoka] = 0.5
                 if ruokienmaara[ruoka] == 3:
                     ruokienmaara[ruoka] = 1
-            mitaTarvitaan(reseptit, ruokienmaara)
-            print(ruokienmaara)
+            ostoslista = mitaTarvitaan(reseptit, ruokienmaara, ostoslista)
+            ostoslista = lisaaMuut(ostoslista)
+            return ostoslista
 
-def mitaTarvitaan(reseptit, ruokienmaara):
+def mitaTarvitaan(reseptit, ruokienmaara, ostoslista):
     for ruoka in ruokienmaara:
-        print(ruoka)
+        ostoslista = ostoslista + ruoka + "\n"
         for resepti in reseptit:
             try:   
                 if resepti["Ruoka"] == ruoka:
                     if resepti["Raaka-aineet"] == "":
                         break
+                    pisin = 0
+                    for row in resepti["Raaka-aineet"]:
+                        if pisin < len(row["ainesosa"]):
+                            pisin = len(row["ainesosa"])
+                    pisin = pisin +2
                     for row in resepti["Raaka-aineet"]:
                         todellinen = float(row["maara"]) * ruokienmaara[ruoka]
-                        print("    - ", row["ainesosa"], todellinen, row["yksikko"])
-                    #print(resepti["Raaka-aineet"])
+                        vali = pisin - len(row["ainesosa"])
+                        ostoslista = ostoslista + "    - " + row["ainesosa"] + vali*" " + str(todellinen) + row["yksikko"] + "\n"           
             except KeyError:
-                print("Raaka-aineet puuttuu")
+                ostoslista = ostoslista + "    - Raaka-aineet puuttuu" + "\n"
+    return ostoslista
+            
+def lisaaMuut(ostoslista):
+    muut = []
+    kysyLisaa = True
+    while kysyLisaa:
+        muut.append(input("Lisää ostoslistalle muuta --> "))
+        if input("Lisätäänkö muuta? (e = ei) --> ") == "e":
+            break
+    ostoslista = ostoslista + "Muut" + "\n"
+    for row in muut:
+        ostoslista = ostoslista + "    - " + row + "\n"
+    return ostoslista
+
+def tallennaOstoslista(ostoslista, viikko):
+    with open("ostoslista" + viikko + ".txt", "w") as ostokset:
+        ostokset.write(ostoslista)
             
 
 def main():
+    ostoslista = ""
     ruokalista = lueRuokalista()
     reseptit = lueReseptit()
     viikko = kysyViikko(ruokalista)
-    teeOstoslista(ruokalista, reseptit, viikko)
+    ostoslista = teeOstoslista(ruokalista, reseptit, viikko, ostoslista)
+    tallennaOstoslista(ostoslista, viikko)
 
-if __name__ == "__main__":
-    main()
+main()
