@@ -21,11 +21,11 @@ def kysyViikko(ruokalista):
     for row in ruokalista:
         if viikko == row["Vko"]:
             return viikko
-    kysyViikko(ruokalista)
+    return kysyViikko(ruokalista)
 
 
 def teeOstoslista(ruokalista, reseptit, viikko):
-    print(viikko)
+    print("Vko", viikko)
     for row in ruokalista:
         kysyseuraava = True
         if row["Vko"] == viikko:
@@ -37,9 +37,31 @@ def teeOstoslista(ruokalista, reseptit, viikko):
                 if not ruoka in ruokienmaara.keys():
                     ruokienmaara[ruoka] = 0
                 ruokienmaara[ruoka] = ruokienmaara[ruoka]+1
+            for ruoka in ruuat:
+                if ruoka == "":
+                    continue
+                if ruokienmaara[ruoka] == 2:
+                    ruokienmaara[ruoka] = 0.5
+                if ruokienmaara[ruoka] == 3:
+                    ruokienmaara[ruoka] = 1
+            mitaTarvitaan(reseptit, ruokienmaara)
             print(ruokienmaara)
-        break
 
+def mitaTarvitaan(reseptit, ruokienmaara):
+    for ruoka in ruokienmaara:
+        print(ruoka)
+        for resepti in reseptit:
+            try:   
+                if resepti["Ruoka"] == ruoka:
+                    if resepti["Raaka-aineet"] == "":
+                        break
+                    for row in resepti["Raaka-aineet"]:
+                        todellinen = float(row["maara"]) * ruokienmaara[ruoka]
+                        print("    - ", row["ainesosa"], todellinen, row["yksikko"])
+                    #print(resepti["Raaka-aineet"])
+            except KeyError:
+                print("Raaka-aineet puuttuu")
+            
 
 def main():
     ruokalista = lueRuokalista()
